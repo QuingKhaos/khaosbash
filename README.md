@@ -50,6 +50,9 @@ just tinting provides, due to the fact that the overlay mask already has a given
 color range you can get from tinting. But you have to redo the colorization and export whenever I improve the assets, if
 you want to get the improvements in your mod.
 
+It's not required, that you use the provided convenience functions to generate the icon and sprite definitions, you can
+also copy them into your mod and modify them to your needs.
+
 ## Legal notice
 
 Except for the files in the `graphics` folder, which contain their own `LICENSE.md` declaration, this mod is licensed
