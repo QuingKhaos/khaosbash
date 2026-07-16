@@ -1,12 +1,17 @@
 {
-  "name": "###NAME###",
-  "title": "###TITLE###",
-  "description": "###DESCRIPTION###",
+  "name": "khaosbash",
+  "title": "QuingKhaos' Kitbashing Toolkit",
+  "description": "A growing toolkit of de-colorized Factorio assets to kitbash new assets together. Either directly in your mod or with GIMP.",
   "author": "QuingKhaos",
   "homepage": "https://discord.gg/SYmkaDjFCt",
   "version": "1.0.0",
   "factorio_version": "2.0",
   "dependencies": [
     "base >= 2.0.77"
-  ]
+  ],
+  "package": {
+    "ignore": [
+      "**/*.xcf"
+    ]
+  }
 }
