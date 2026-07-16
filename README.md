@@ -8,6 +8,48 @@
 
 A growing toolkit of de-colorized Factorio assets to kitbash new assets together. Either directly in your mod or with GIMP.
 
+I'm still new at doing graphics things, but my premise is if I can make something that can be re-used, why not publish it?
+Which also means, this will be a slowly growing project, as I add things on the go when I need them for my own mods.
+
+But if you are in need of a specific asset, feel free to open a discussion on the mod portal, or a GitHub issue, or join
+the discord server and let me know and I will see if I can add it to the toolkit.
+
+## Usage
+
+You can either just use the provided overlay tinting functionality, for example:
+
+```lua
+local constant_combinator = require("__khaosbash__.prototypes.base.combinator.constant-combinator")
+
+local my_awesome_combinator = util.table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
+my_awesome_combinator.icons = constant_combinator.icons_from_tint(util.color("3bc93b"))
+my_awesome_combinator.sprites = constant_combinator.entity_sprites_from_tint(util.color("3bc93b"))
+data.extend({my_awesome_combinator})
+```
+
+gives you a leafy green constant combinator.
+
+![Example of a kitbashed constant combinator](https://github.com/QuingKhaos/khaosbash/blob/main/.github/images/example-constant-combinator.png?raw=true)
+
+Or you can use the provided GIMP projects to re-colorize the assets and export at single PNG without using layering in
+your mod. Just select the overlay layer you want to use, change the color of the overlay layer, and export with all
+layers visible. There is also a function included in the toolkit to generate the sprites from your exported image as well:
+
+```lua
+local constant_combinator = require("__khaosbash__.prototypes.base.combinator.constant-combinator")
+
+local my_awesome_combinator = util.table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
+my_awesome_combinator.icons = constant_combinator.icons_from_file("__myawesomemod__/graphics/icons/my-awesome-combinator.png")
+my_awesome_combinator.sprites = constant_combinator.entity_sprites_from_file("__myawesomemod__/graphics/entity/my-awesome-combinator.png")
+data.extend({my_awesome_combinator})
+```
+
+The bonus about using the tinting way, whenever I improve those assets, you will automatically get the improvements in
+your mod without having to re-export the images. Otherwise re-colorizing with GIMP will give you more possibilities than
+just tinting provides, due to the fact that the overlay mask already has a given grayish color, which will limit the
+color range you can get from tinting. But you have to redo the colorization and export whenever I improve the assets, if
+you want to get the improvements in your mod.
+
 ## Legal notice
 
 Except for the files in the `graphics` folder, which contain their own `LICENSE.md` declaration, this mod is licensed
