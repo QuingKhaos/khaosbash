@@ -19,19 +19,20 @@ the discord server and let me know and I will see if I can add it to the toolkit
 You can either just use the provided overlay tinting functionality, for example:
 
 ```lua
+local khaosbash = require("__khaosbash__.prototypes.lib")
 local constant_combinator = require("__khaosbash__.prototypes.base.combinator.constant-combinator")
 
 local my_awesome_combinator = util.table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
-my_awesome_combinator.icons = constant_combinator.icons_from_tint(util.color("3bc93b"))
+my_awesome_combinator.name = "my-awesome-combinator"
+my_awesome_combinator.icons = khaosbash.load_icons("__khaosbash__/graphics/base/icons/constant-combinator", util.color("3bc93b"))
 my_awesome_combinator.sprites = constant_combinator.entity_sprites_from_tint(util.color("3bc93b"))
-data.extend({my_awesome_combinator})
 ```
 
 gives you a leafy green constant combinator.
 
 ![Example of a kitbashed constant combinator](https://github.com/QuingKhaos/khaosbash/blob/main/.github/images/example-constant-combinator.png?raw=true)
 
-Or you can use the provided GIMP projects to re-colorize the assets and export at single PNG without using layering in
+Or you can use the provided GIMP projects to re-colorize the assets and export a single PNG without using layering in
 your mod. Just select the overlay layer you want to use, change the color of the overlay layer, and export with all
 layers visible. There is also a function included in the toolkit to generate the sprites from your exported image as well:
 
@@ -39,7 +40,9 @@ layers visible. There is also a function included in the toolkit to generate the
 local constant_combinator = require("__khaosbash__.prototypes.base.combinator.constant-combinator")
 
 local my_awesome_combinator = util.table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
-my_awesome_combinator.icons = constant_combinator.icons_from_file("__myawesomemod__/graphics/icons/my-awesome-combinator.png")
+my_awesome_combinator.name = "my-awesome-combinator"
+my_awesome_combinator.icon = "__myawesomemod__/graphics/icons/my-awesome-combinator.png"
+my_awesome_combinator.icon_size = 64
 my_awesome_combinator.sprites = constant_combinator.entity_sprites_from_file("__myawesomemod__/graphics/entity/my-awesome-combinator.png")
 data.extend({my_awesome_combinator})
 ```
