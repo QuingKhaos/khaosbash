@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.0
-Date: ???
+Date: 2026-07-24
   Features:
     - Add magazine and shotgun shell icons.
     - Add ammo technology icon with three masks.
@@ -11,7 +11,7 @@ Date: 2026-07-18
     - Update for Factorio 2.1.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
-Date: ???
+Date: 2026-07-24
   Features:
     - Add magazine and shotgun shell icons.
     - Add ammo technology icon with three masks.
