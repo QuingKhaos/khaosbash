@@ -3,6 +3,7 @@ local khaosbash = {}
 
 --- @class khaosbash.ImageLayer Describes a single image layer
 --- @field public filename data.FileName The path to the icon file.
+--- @field public size integer The size of the icon in pixels. Must be a power of 2.
 --- @field public tint_idx integer? The index of the tint to apply to this icon layer. If nil, no tint is applied.
 --- @field public draw_background boolean? ONLY for icons. Outline is drawn using signed distance field generated on load. Defaults to false.
 
@@ -30,7 +31,7 @@ function khaosbash.load_icons(image, ...)
     local tint = (icon.tint_idx and tints[icon.tint_idx]) and util.premul_color(tints[icon.tint_idx]) or nil
     table.insert(icons, {
       icon = icon.filename,
-      icon_size = 64,
+      icon_size = icon.size,
       tint = tint,
       draw_background = icon.draw_background or false
     })
