@@ -1,0 +1,10 @@
+mod_info:
+  title: |
+    QuingKhaos' Kitbashing Toolkit
+  summary: |
+    A growing toolkit of de-colorized Factorio assets to kitbash new assets together. Either directly in your mod or with GIMP.
+  description_file: README.md
+  attach_source_link: true
+  license: default_gnulgplv3
+  category: internal
+  tags: []
